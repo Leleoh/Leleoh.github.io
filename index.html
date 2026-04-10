@@ -1,23 +1,422 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Leonel Hernandez | iOS Developer</title>
-    <style>
-        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; background-color: #f5f5f7; color: #1d1d1f; display: flex; justify-content: center; align-items: center; height: 100vh; margin: 0; }
-        .card { background: white; padding: 2rem; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); text-align: center; max-width: 400px; }
-        h1 { margin: 0; font-size: 24px; }
-        p { color: #86868b; }
-        .badge { background: #0071e3; color: white; padding: 5px 12px; border-radius: 12px; font-size: 12px; font-weight: bold; text-transform: uppercase; }
-    </style>
+    <title>Leonel Ferraz Hernandez - iOS Developer</title>
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <!-- Icons -->
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <!-- Styles -->
+    <link rel="stylesheet" href="./css/styles.css">
 </head>
+
 <body>
-    <div class="card">
-        <span class="badge">Em construção</span>
-        <h1>Leonel Hernandez</h1>
-        <p>iOS Developer @ Apple Developer Academy | Eng. Computação UFRGS</p>
-        <p>Em breve, o portfólio do Faltapp e outros projetos estarão aqui. 🚀</p>
-    </div>
+    <!-- ShaderGradient Background -->
+    <!-- React Shader Gradient via ESM -->
+    <div id="shader-bg" class="site-background"></div>
+    
+    <script type="importmap">
+    {
+      "imports": {
+        "react": "https://esm.sh/react",
+        "react-dom/client": "https://esm.sh/react-dom/client",
+        "@shadergradient/react": "https://esm.sh/@shadergradient/react",
+        "three": "https://esm.sh/three",
+        "@react-three/fiber": "https://esm.sh/@react-three/fiber"
+      }
+    }
+    </script>
+    <script type="module">
+      import React from 'react';
+      import { createRoot } from 'react-dom/client';
+      import { ShaderGradientCanvas, ShaderGradient } from '@shadergradient/react';
+
+      const root = createRoot(document.getElementById('shader-bg'));
+      root.render(
+        React.createElement(ShaderGradientCanvas, 
+          { style: { width: '100%', height: '100%', pointerEvents: 'none' } },
+          React.createElement(ShaderGradient, {
+            animate: "on",
+            axesHelper: "off",
+            bgColor1: "#000000",
+            bgColor2: "#000000",
+            brightness: 1,
+            color1: "#803e08",
+            color2: "#3022ca",
+            color3: "#212121",
+            destination: "onCanvas",
+            embedMode: "off",
+            envPreset: "city",
+            format: "gif",
+            fov: 45,
+            frameRate: 10,
+            gizmoHelper: "hide",
+            grain: "off",
+            lightType: "3d",
+            pixelDensity: 1,
+            type: "waterPlane",
+            uAmplitude: 0,
+            uFrequency: 0,
+            uDensity: 1.5,
+            uSpeed: 0.1,
+            uStrength: 1.5,
+            uTime: 8,
+            positionX: 0,
+            positionY: 0,
+            positionZ: 0,
+            rotationX: 50,
+            rotationY: 0,
+            rotationZ: -60,
+            cAzimuthAngle: 180,
+            cDistance: 2.8,
+            cPolarAngle: 80,
+            cameraZoom: 9.1,
+            wireframe: false
+          })
+        )
+      );
+    </script>
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="nav-content">
+            <div class="nav-links">
+                <a href="#home">Home</a>
+                <a href="#projects">Projetos</a>
+                <a href="#skills">Habilidades</a>
+                <a href="#testimonials">Depoimentos</a>
+                <a href="#experience">Experiência</a>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <!-- Hero Section -->
+        <section id="home" class="hero">
+            <div class="hero-content">
+                <h1 class="hero-title">
+                    Olá, eu sou <span class="gradient-text">Leonel Hernandez</span>
+                </h1>
+                <p class="hero-subtitle">
+                    Sou <strong>desenvolvedor iOS</strong> na Apple Developer Academy e estudante de <strong>Engenharia de Computação</strong> na Universidade Federal do Rio Grande do Sul (UFRGS).
+                </p>
+                <div class="hero-stats">
+                    <div class="stat-number-wrapper">
+                        <span class="stat-number" data-target="1200">0</span><span class="stat-plus">+</span>
+                    </div>
+                    <span class="stat-label">Usuários de aplicativos na App Store</span>
+                </div>
+                <div class="hero-cta">
+                    <a href="#projects" class="btn btn-primary">Ver Meus Projetos <i class="ph ph-arrow-right"></i></a>
+                    <a href="https://www.linkedin.com/in/leonelhernandezs/" target="_blank" class="btn btn-secondary"><i class="ph ph-linkedin-logo"></i> LinkedIn</a>
+                    <a href="https://github.com/Leleoh" target="_blank" class="btn btn-secondary"><i class="ph ph-github-logo"></i> GitHub</a>
+                </div>
+            </div>
+
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects" class="projects">
+            <div class="section-header">
+                <h2>Meus Projetos iOS</h2>
+                <p>7 aplicativos desenvolvidos para o ecossistema Apple.</p>
+            </div>
+
+            <div class="projects-grid">
+                <!-- Highlighted App: Faltapp -->
+                <div class="project-card highlight">
+                    <div class="card-glow"></div>
+                    <div class="project-icon">
+                        <img src="./applogos/logofaltapp.jpg" alt="Faltapp Logo">
+                    </div>
+                    <div class="project-info">
+                        <div class="project-header-row">
+                            <h3>Faltapp</h3>
+                            <span class="badge highlight-badge"><i class="ph ph-star-fill"></i> +1200 Downloads</span>
+                        </div>
+                        <p class="project-desc">App que ajuda a gerenciar as faltas e presenças na UFRGS, trazendo recursos extras para auxiliar a jornada acadêmica.</p>
+                        <div class="project-tags">
+                            <span class="tag">SwiftUI</span>
+                            <span class="tag">SwiftData</span>
+                            <span class="tag">iOS App</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- App: MaDots -->
+                <div class="project-card">
+                    <div class="project-icon">
+                        <img src="./applogos/madotslogo.png" alt="MaDots Logo">
+                    </div>
+                    <div class="project-info">
+                        <h3>MaDots</h3>
+                        <p class="project-desc">Tracker de hábitos e timer estilo pomodoro desenhado para gerenciar melhor o tempo através de feedback visual "clean" com dots coloridos.</p>
+                        <div class="project-tags">
+                            <span class="tag">UIKit</span>
+                            <span class="tag">CoreData</span>
+                            <span class="tag">iOS App</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- App: ConcursAI -->
+                <div class="project-card">
+                    <div class="project-icon">
+                        <img src="./applogos/concursalogo.jpg" alt="ConcursAI Logo">
+                    </div>
+                    <div class="project-info">
+                        <h3>ConcursAI</h3>
+                        <p class="project-desc">App que gera questões usando inteligência artificial para treinar para concursos. Permite revisar com feedbacks e acompanhar métricas.</p>
+                        <div class="project-tags">
+                            <span class="tag">UIKit</span>
+                            <span class="tag">CoreData</span>
+                            <span class="tag">API Rest</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- App: Zoomies -->
+                <div class="project-card">
+                    <div class="project-icon">
+                        <img src="./applogos/zoomieslogo.png" alt="Zoomies Logo">
+                    </div>
+                    <div class="project-info">
+                        <h3>Zoomies</h3>
+                        <p class="project-desc">App de caminhada gamificado que incentiva a se exercitar de forma divertida. Foi o primeiro do tipo lançado para o Brasil.</p>
+                        <div class="project-tags">
+                            <span class="tag">SwiftUI</span>
+                            <span class="tag">HealthKit</span>
+                            <span class="tag">iOS App</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- App: Recapsule -->
+                <div class="project-card">
+                    <div class="project-icon">
+                        <img src="./applogos/recapsulelogo.png" alt="Recapsule Logo">
+                    </div>
+                    <div class="project-info">
+                        <h3>Recapsule</h3>
+                        <p class="project-desc">Experiência imersiva para criar cápsulas do tempo digitais (recapsules), guardando momentos diários para revisitá-los no futuro com elementos de gamificação.</p>
+                        <div class="project-tags">
+                            <span class="tag">SwiftUI</span>
+                            <span class="tag">CloudKit</span>
+                            <span class="tag">iOS App</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- App: Before the Rain -->
+                <div class="project-card">
+                    <div class="project-icon">
+                        <img src="./applogos/logobtr.png" alt="Before the Rain Logo">
+                    </div>
+                    <div class="project-info">
+                        <h3>Before the Rain</h3>
+                        <p class="project-desc">Experiência narrativa para entender os motivos que agravam as enchentes no RS, buscando conscientizar o público e ensinar como agir durante essas crises.</p>
+                        <div class="project-tags">
+                            <span class="tag">SwiftUI</span>
+                            <span class="tag">AVFoundation</span>
+                            <span class="tag">SpriteKit</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- App: Zenith -->
+                <div class="project-card">
+                    <div class="project-icon">
+                        <img src="./applogos/zenithlogo.png" alt="Zenith Logo">
+                    </div>
+                    <div class="project-info">
+                        <h3>Zenith</h3>
+                        <p class="project-desc">Jogo estilo top-down frenético onde sua missão é escalar uma masmorra perigosa, derrotando o máximo de inimigos que conseguir pelo caminho.</p>
+                        <div class="project-tags">
+                            <span class="tag">SpriteKit</span>
+                            <span class="tag">SwiftUI</span>
+                            <span class="tag">iOS Game</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills" class="skills">
+            <div class="section-header">
+                <h2>Habilidades</h2>
+                <p>Hard skills e soft skills que adquiri na minha jornada.</p>
+            </div>
+            
+            <div class="skills-container">
+                <div class="skills-category">
+                    <h3><i class="ph ph-command"></i> Hard Skills</h3>
+                    <div class="skills-tags">
+                        <span class="skill-tag">Swift</span>
+                        <span class="skill-tag">SwiftUI</span>
+                        <span class="skill-tag">UIKit</span>
+                        <span class="skill-tag">HealthKit</span>
+                        <span class="skill-tag">CloudKit</span>
+                        <span class="skill-tag">C/C++</span>
+                        <span class="skill-tag">Python</span>
+                        <span class="skill-tag">Git</span>
+                        <span class="skill-tag">MVVM</span>
+                    </div>
+                </div>
+
+                <div class="skills-category">
+                    <h3><i class="ph ph-users"></i> Soft Skills</h3>
+                    <div class="skills-tags">
+                        <span class="skill-tag">Resolução de problemas</span>
+                        <span class="skill-tag">Comunicação</span>
+                        <span class="skill-tag">Apresentação</span>
+                        <span class="skill-tag">Colaboração</span>
+                        <span class="skill-tag">Trabalho em equipe</span>
+                        <span class="skill-tag">Resiliência técnica</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Testimonials Section -->
+        <section id="testimonials" class="testimonials">
+            <div class="section-header">
+                <h2>O que dizem sobre mim</h2>
+                <p>O impacto do meu trabalho sob a ótica de usuários e colegas de equipe.</p>
+            </div>
+
+            <div class="testimonials-grid">
+                <!-- Faltapp User 1 -->
+                <div class="testimonial-card">
+                    <div class="quote-icon"><i class="ph ph-quotes"></i></div>
+                    <p class="testimonial-text">"Esse é com certeza o melhor aplicativo para um estudante de universidade, ajuda muito!"</p>
+                    <div class="testimonial-author">
+                        <div class="author-info">
+                            <h4>Usuário do Faltapp</h4>
+                            <div class="stars">
+                                <i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Peer Review 1 -->
+                <div class="testimonial-card">
+                    <div class="quote-icon"><i class="ph ph-quotes"></i></div>
+                    <p class="testimonial-text">"Quando você abraça um problema, vai até o fim para resolver. Muito criativo, inteligente e perseverante."</p>
+                    <div class="testimonial-author">
+                        <div class="author-info">
+                            <h4>Colega Desenvolvedor</h4>
+                            <span>Apple Developer Academy</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Faltapp User 2 -->
+                <div class="testimonial-card">
+                    <div class="quote-icon"><i class="ph ph-quotes"></i></div>
+                    <p class="testimonial-text">"Simples, prático e cumpre o que promete. Antes tinha que anotar tudo no notas, agora está muito bem organizado."</p>
+                    <div class="testimonial-author">
+                        <div class="author-info">
+                            <h4>Usuário do Faltapp</h4>
+                            <div class="stars">
+                                <i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Peer Review 2 -->
+                <div class="testimonial-card">
+                    <div class="quote-icon"><i class="ph ph-quotes"></i></div>
+                    <p class="testimonial-text">"Sempre animado, esforçado e proativo. Outro ponto muito forte são as apresentações, sabe vender e apresentar muito bem os projetos."</p>
+                    <div class="testimonial-author">
+                        <div class="author-info">
+                            <h4>Colega Desenvolvedor</h4>
+                            <span>Apple Developer Academy</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Peer Review 3 -->
+                <div class="testimonial-card">
+                    <div class="quote-icon"><i class="ph ph-quotes"></i></div>
+                    <p class="testimonial-text">"Extremamente amigável e exemplar no trato com as pessoas. Um cara muito inteligente e bastante técnico."</p>
+                    <div class="testimonial-author">
+                        <div class="author-info">
+                            <h4>Colega Desenvolvedor</h4>
+                            <span>Apple Developer Academy</span>
+                        </div>
+                    </div>
+                </div>
+
+<!-- Faltapp User 3 -->
+                <div class="testimonial-card">
+                    <div class="quote-icon"><i class="ph ph-quotes"></i></div>
+                    <p class="testimonial-text">"Genial, uso e recomendo"</p>
+                    <div class="testimonial-author">
+                        <div class="author-info">
+                            <h4>Usuário do Faltapp</h4>
+                            <div class="stars">
+                                <i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Experience Section -->
+        <section id="experience" class="experience">
+            <div class="section-header">
+                <h2>Experiência & Formação</h2>
+                <p>Minha jornada acadêmica e profissional.</p>
+            </div>
+            
+            <div class="experience-list">
+                <!-- Apple Developer Academy -->
+                <div class="experience-item">
+                    <div class="exp-icon">
+                        <i class="ph ph-apple-logo"></i>
+                    </div>
+                    <div class="exp-content">
+                        <h3>Desenvolvedor iOS</h3>
+                        <h4>Apple Developer Academy</h4>
+                        <p class="exp-date">2025 - 2026</p>
+                    </div>
+                </div>
+
+                <!-- Engenharia de Computação -->
+                <div class="experience-item">
+                    <div class="exp-icon">
+                        <i class="ph ph-graduation-cap"></i>
+                    </div>
+                    <div class="exp-content">
+                        <h3>Engenharia de Computação</h3>
+                        <h4>Universidade Federal do Rio Grande do Sul (UFRGS)</h4>
+                        <p class="exp-date">2023 - 2028</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2026 Leonel Ferraz Hernandez. Todos os direitos reservados.</p>
+            <p class="made-with">Desenvolvido com <i class="ph ph-heart"></i> em Porto Alegre.</p>
+        </div>
+    </footer>
+
+    <script src="./js/script.js"></script>
 </body>
+
 </html>
