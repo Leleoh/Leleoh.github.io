@@ -43,6 +43,29 @@ document.addEventListener('DOMContentLoaded', () => {
             el.style.opacity = '0';
             el.style.animation = `fadeUp 0.6s ease forwards ${index * 0.15}s`;
         });
+        
+        // Start counters animation
+        setTimeout(() => {
+            const counters = document.querySelectorAll('.stat-number');
+            counters.forEach(counter => {
+                const target = +counter.getAttribute('data-target');
+                const duration = 2500; // 2.5 seconds
+                let startTimestamp = null;
+                const step = (timestamp) => {
+                    if (!startTimestamp) startTimestamp = timestamp;
+                    const progress = Math.min((timestamp - startTimestamp) / duration, 1);
+                    // easeOutQuart smooth easing so it slows down near end
+                    const easeProgress = 1 - Math.pow(1 - progress, 4);
+                    counter.innerText = Math.floor(easeProgress * target);
+                    if (progress < 1) {
+                        window.requestAnimationFrame(step);
+                    } else {
+                        counter.innerText = target;
+                    }
+                };
+                window.requestAnimationFrame(step);
+            });
+        }, 500); // Wait for the element to start fading in
     }, 100);
 });
 

@@ -17,14 +17,79 @@
 </head>
 
 <body>
+    <!-- ShaderGradient Background -->
+    <!-- React Shader Gradient via ESM -->
+    <div id="shader-bg" class="site-background"></div>
+    
+    <script type="importmap">
+    {
+      "imports": {
+        "react": "https://esm.sh/react",
+        "react-dom/client": "https://esm.sh/react-dom/client",
+        "@shadergradient/react": "https://esm.sh/@shadergradient/react",
+        "three": "https://esm.sh/three",
+        "@react-three/fiber": "https://esm.sh/@react-three/fiber"
+      }
+    }
+    </script>
+    <script type="module">
+      import React from 'react';
+      import { createRoot } from 'react-dom/client';
+      import { ShaderGradientCanvas, ShaderGradient } from '@shadergradient/react';
+
+      const root = createRoot(document.getElementById('shader-bg'));
+      root.render(
+        React.createElement(ShaderGradientCanvas, 
+          { style: { width: '100%', height: '100%', pointerEvents: 'none' } },
+          React.createElement(ShaderGradient, {
+            animate: "on",
+            axesHelper: "off",
+            bgColor1: "#000000",
+            bgColor2: "#000000",
+            brightness: 1,
+            color1: "#803e08",
+            color2: "#3022ca",
+            color3: "#212121",
+            destination: "onCanvas",
+            embedMode: "off",
+            envPreset: "city",
+            format: "gif",
+            fov: 45,
+            frameRate: 10,
+            gizmoHelper: "hide",
+            grain: "off",
+            lightType: "3d",
+            pixelDensity: 1,
+            type: "waterPlane",
+            uAmplitude: 0,
+            uFrequency: 0,
+            uDensity: 1.5,
+            uSpeed: 0.1,
+            uStrength: 1.5,
+            uTime: 8,
+            positionX: 0,
+            positionY: 0,
+            positionZ: 0,
+            rotationX: 50,
+            rotationY: 0,
+            rotationZ: -60,
+            cAzimuthAngle: 180,
+            cDistance: 2.8,
+            cPolarAngle: 80,
+            cameraZoom: 9.1,
+            wireframe: false
+          })
+        )
+      );
+    </script>
+
     <!-- Navbar -->
     <nav class="navbar">
         <div class="nav-content">
-            <a href="#" class="logo">LFH.</a>
             <div class="nav-links">
                 <a href="#home">Home</a>
                 <a href="#projects">Projetos</a>
-                <a href="#contact">Contato</a>
+                <a href="#experience">Experiência</a>
             </div>
         </div>
     </nav>
@@ -33,23 +98,25 @@
         <!-- Hero Section -->
         <section id="home" class="hero">
             <div class="hero-content">
-                <div class="hero-badge">Disponível para novas oportunidades</div>
                 <h1 class="hero-title">
                     Olá, eu sou <span class="gradient-text">Leonel Ferraz Hernandez</span>.
                 </h1>
                 <p class="hero-subtitle">
-                    Estudante de <strong>Engenharia de Computação na UFRGS</strong><br />
-                    & <strong>Desenvolvedor iOS</strong> na Apple Developer Academy de Porto Alegre.
+                    Sou <strong>desenvolvedor iOS</strong> na Apple Developer Academy e estudante de <strong>Engenharia de Computação</strong> na Universidade Federal do Rio Grande do Sul (UFRGS).
                 </p>
+                <div class="hero-stats">
+                    <div class="stat-number-wrapper">
+                        <span class="stat-number" data-target="1200">0</span><span class="stat-plus">+</span>
+                    </div>
+                    <span class="stat-label">Downloads de aplicativos na App Store</span>
+                </div>
                 <div class="hero-cta">
                     <a href="#projects" class="btn btn-primary">Ver Meus Projetos <i class="ph ph-arrow-right"></i></a>
-                    <a href="#contact" class="btn btn-secondary">Entrar em contato</a>
+                    <a href="https://www.linkedin.com/in/leonelhernandezs/" target="_blank" class="btn btn-secondary"><i class="ph ph-linkedin-logo"></i> LinkedIn</a>
+                    <a href="https://github.com/Leleoh" target="_blank" class="btn btn-secondary"><i class="ph ph-github-logo"></i> GitHub</a>
                 </div>
             </div>
 
-            <!-- Abstract background shape -->
-            <div class="hero-glow"></div>
-            <div class="hero-glow-secondary"></div>
         </section>
 
         <!-- Projects Section -->
@@ -102,11 +169,10 @@
                         <img src="./applogos/concursalogo.jpg" alt="ConcursAI Logo">
                     </div>
                     <div class="project-info">
-                        <h3>ConcursaAI</h3>
+                        <h3>ConcursAI</h3>
                         <p class="project-desc">App que gera questões usando inteligência artificial para treinar para concursos. Permite revisar com feedbacks e acompanhar métricas.</p>
                         <div class="project-tags">
                             <span class="tag">UIKit</span>
-                            <span class="tag">SwiftUI</span>
                             <span class="tag">CoreData</span>
                             <span class="tag">API Rest</span>
                         </div>
@@ -180,21 +246,36 @@
             </div>
         </section>
 
-        <!-- Contact Section -->
-        <section id="contact" class="contact">
-            <div class="contact-card">
-                <h2>Vamos construir algo juntos?</h2>
-                <p>Mande uma mensagem para mim no LinkedIn ou dê uma olhada no meu GitHub.</p>
-                <div class="contact-links">
-                    <a href="https://linkedin.com/" target="_blank" class="social-btn">
-                        <i class="ph ph-linkedin-logo"></i> LinkedIn
-                    </a>
-                    <a href="https://github.com/" target="_blank" class="social-btn">
-                        <i class="ph ph-github-logo"></i> GitHub
-                    </a>
-                    <a href="mailto:contato@exemplo.com" class="social-btn outline">
-                        <i class="ph ph-envelope"></i> Email
-                    </a>
+        <!-- Experience Section -->
+        <section id="experience" class="experience">
+            <div class="section-header">
+                <h2>Experiência & Formação</h2>
+                <p>Minha jornada acadêmica e profissional.</p>
+            </div>
+            
+            <div class="experience-list">
+                <!-- Apple Developer Academy -->
+                <div class="experience-item">
+                    <div class="exp-icon">
+                        <i class="ph ph-apple-logo"></i>
+                    </div>
+                    <div class="exp-content">
+                        <h3>Desenvolvedor iOS</h3>
+                        <h4>Apple Developer Academy</h4>
+                        <p class="exp-date">2025 - 2026</p>
+                    </div>
+                </div>
+
+                <!-- Engenharia de Computação -->
+                <div class="experience-item">
+                    <div class="exp-icon">
+                        <i class="ph ph-graduation-cap"></i>
+                    </div>
+                    <div class="exp-content">
+                        <h3>Engenharia de Computação</h3>
+                        <h4>Universidade Federal do Rio Grande do Sul (UFRGS)</h4>
+                        <p class="exp-date">2023 - 2028</p>
+                    </div>
                 </div>
             </div>
         </section>
