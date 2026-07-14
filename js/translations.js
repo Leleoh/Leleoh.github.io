@@ -12,7 +12,7 @@ const translations = {
         "btn-projects": "Ver Meus Projetos <i class=\"ph ph-arrow-right\"></i>",
         
         "projects-title": "Meus Projetos iOS",
-        "projects-subtitle": "7 aplicativos desenvolvidos para o ecossistema Apple.",
+        "projects-subtitle": "8 aplicativos desenvolvidos para o ecossistema Apple.",
         "desc-faltapp": "App que ajuda a gerenciar as faltas e presenças na UFRGS, trazendo recursos extras para auxiliar a jornada acadêmica.",
         "desc-madots": "Tracker de hábitos e timer estilo pomodoro desenhado para gerenciar melhor o tempo através de feedback visual \"clean\" com dots coloridos.",
         "desc-concursai": "App que gera questões usando inteligência artificial para treinar para concursos. Permite revisar com feedbacks e acompanhar métricas.",
@@ -20,6 +20,7 @@ const translations = {
         "desc-recapsule": "Experiência imersiva para criar cápsulas do tempo digitais (recapsules), guardando momentos diários para revisitá-los no futuro com elementos de gamificação.",
         "desc-btr": "Experiência narrativa para entender os motivos que agravam as enchentes no RS, buscando conscientizar o público e ensinar como agir durante essas crises.",
         "desc-zenith": "Jogo estilo top-down frenético onde sua missão é escalar uma masmorra perigosa, derrotando o máximo de inimigos que conseguir pelo caminho.",
+        "desc-keeblab": "App que permite montar teclados mecânicos de forma imersiva, explorando o ecossistema do visionOS.",
         
         "skills-title": "Habilidades",
         "skills-subtitle": "Hard skills e soft skills que adquiri na minha jornada.",
@@ -62,7 +63,7 @@ const translations = {
         "btn-projects": "See My Projects <i class=\"ph ph-arrow-right\"></i>",
         
         "projects-title": "My iOS Projects",
-        "projects-subtitle": "7 apps developed for the Apple ecosystem.",
+        "projects-subtitle": "8 apps developed for the Apple ecosystem.",
         "desc-faltapp": "App that helps manage absences and attendance at UFRGS, bringing extra features to assist the academic journey.",
         "desc-madots": "Habit tracker and pomodoro-style timer designed to better manage time through clean visual feedback with colored dots.",
         "desc-concursai": "App that generates questions using artificial intelligence to train for exams. Allows reviewing with feedback and tracking metrics.",
@@ -70,6 +71,7 @@ const translations = {
         "desc-recapsule": "Immersive experience to create digital time capsules (recapsules), saving daily moments to revisit them in the future with gamification elements.",
         "desc-btr": "Narrative experience to understand the reasons that worsen the floods in RS (Brazil), aiming to raise public awareness and teach how to act during these crises.",
         "desc-zenith": "Frantic top-down game where your mission is to climb a dangerous dungeon, defeating as many enemies as you can along the way.",
+        "desc-keeblab": "Immersive app to assemble mechanical keyboards, exploring the visionOS ecosystem.",
         
         "skills-title": "Skills",
         "skills-subtitle": "Hard and soft skills I acquired on my journey.",
@@ -122,6 +124,7 @@ const elementsToTranslate = {
     ".project-card:nth-child(5) .project-desc": "desc-recapsule",
     ".project-card:nth-child(6) .project-desc": "desc-btr",
     ".project-card:nth-child(7) .project-desc": "desc-zenith",
+    ".project-card:nth-child(8) .project-desc": "desc-keeblab",
     
     "#skills .section-header h2": "skills-title",
     "#skills .section-header p": "skills-subtitle",
